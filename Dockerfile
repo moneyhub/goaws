@@ -8,7 +8,7 @@ RUN CGO_ENABLED=0 go test ./app/...
 RUN go build -o goaws app/cmd/goaws.go
 
 # release image
-FROM alpine
+FROM alpine:3.23.3
 
 COPY --from=build /go/src/github.com/p4tin/goaws/goaws /goaws
 
